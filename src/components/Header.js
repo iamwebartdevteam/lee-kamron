@@ -1,6 +1,15 @@
 import React from "react";
+// import component 👇
+import Drawer from "react-modern-drawer";
+
+//import styles 👇
+import "react-modern-drawer/dist/index.css";
 
 const Header = () => {
+  const [isOpen, setIsOpen] = React.useState(false);
+  const toggleDrawer = () => {
+    setIsOpen((prevState) => !prevState);
+  };
   return (
     <>
       <span class="body-line"></span>
@@ -13,9 +22,17 @@ const Header = () => {
         </span>
 
         <nav>
-          <span class="logo_icon">
+          <span class="logo_icon" onClick={toggleDrawer}>
             <i class="fa-solid fa-ellipsis-vertical"></i>&nbsp; Menu
           </span>
+          <Drawer
+            open={isOpen}
+            onClose={toggleDrawer}
+            direction="left"
+            className="navsidebar"
+          >
+            <div>Hello World</div>
+          </Drawer>
           <ul>
             <span class="closeNav">
               <i class="fa-solid fa-xmark"></i>
