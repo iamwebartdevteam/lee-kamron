@@ -5,14 +5,14 @@ import Contact from "../components/Contact/Contact";
 import VideoPlay from "../components/VideoPlay";
 import Entertainment from "../components/Entertainment/Entertainment";
 
-const Home = () => {
+const Home = ({ entertanData }) => {
   return (
     <>
       <Banner />
       <FilmList />
       <Contact />
       <VideoPlay />
-      <Entertainment />
+      <Entertainment entertanData={entertanData} />
     </>
   );
 };

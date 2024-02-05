@@ -1,7 +1,9 @@
 import React from "react";
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
-const Entertainment = () => {
+import { Link } from "react-router-dom";
+import { IMG } from "../../api/constant";
+const Entertainment = ({ entertanData }) => {
   const responsive = {
     superLargeDesktop: {
       // the naming can be any, depends on you.
@@ -32,109 +34,25 @@ const Entertainment = () => {
               </h2>
               <div class="swiper mySwiper">
                 <Carousel responsive={responsive}>
-                  <div>
-                    <div class="swiper-slide">
-                      <a href="#">
-                        <div class="d-flex">
-                          <div class="entertainment_content">
-                            <h5>ELITE FORCES</h5>
-                            <p>
-                              Lorem ipsum dolor sit amet, consectetur adipiscing
-                              elit.{" "}
-                            </p>
+                  {entertanData.map((item, index) => (
+                    <div>
+                      <div class="swiper-slide">
+                        <Link to="#">
+                          <div class="d-flex">
+                            <div class="entertainment_content">
+                              <h5>{item.title}</h5>
+                              <div
+                                dangerouslySetInnerHTML={{
+                                  __html: item.description,
+                                }}
+                              />
+                            </div>
+                            <img src={IMG + item.image} alt="" class="w-100" />
                           </div>
-                          <img
-                            src="assets/images/e1.jpg"
-                            alt=""
-                            class="w-100"
-                          />
-                        </div>
-                      </a>
+                        </Link>
+                      </div>
                     </div>
-                  </div>
-                  <div>
-                    {" "}
-                    <div class="swiper-slide">
-                      <a href="#">
-                        <div class="d-flex flex-column-reverse">
-                          <div class="entertainment_content">
-                            <h5>ELITE FORCES</h5>
-                            <p>
-                              Lorem ipsum dolor sit amet, consectetur adipiscing
-                              elit.
-                            </p>
-                          </div>
-                          <img
-                            src="assets/images/e2.jpg"
-                            alt=""
-                            class="w-100"
-                          />
-                        </div>
-                      </a>
-                    </div>
-                  </div>
-
-                  <div>
-                    <div class="swiper-slide">
-                      <a href="#">
-                        <div class="d-flex">
-                          <div class="entertainment_content">
-                            <h5>ELITE FORCES</h5>
-                            <p>
-                              Lorem ipsum dolor sit amet, consectetur adipiscing
-                              elit.
-                            </p>
-                          </div>
-                          <img
-                            src="assets/images/e3.jpg"
-                            alt=""
-                            class="w-100"
-                          />
-                        </div>
-                      </a>
-                    </div>
-                  </div>
-                  <div>
-                    {" "}
-                    <div class="swiper-slide">
-                      <a href="#">
-                        <div class="d-flex flex-column-reverse">
-                          <div class="entertainment_content">
-                            <h5>ELITE FORCES</h5>
-                            <p>
-                              Lorem ipsum dolor sit amet, consectetur adipiscing
-                              elit.
-                            </p>
-                          </div>
-                          <img
-                            src="assets/images/e2.jpg"
-                            alt=""
-                            class="w-100"
-                          />
-                        </div>
-                      </a>
-                    </div>
-                  </div>
-                  <div>
-                    <div class="swiper-slide">
-                      <a href="#">
-                        <div class="d-flex">
-                          <div class="entertainment_content">
-                            <h5>ELITE FORCES</h5>
-                            <p>
-                              Lorem ipsum dolor sit amet, consectetur adipiscing
-                              elit.
-                            </p>
-                          </div>
-                          <img
-                            src="assets/images/e3.jpg"
-                            alt=""
-                            class="w-100"
-                          />
-                        </div>
-                      </a>
-                    </div>
-                  </div>
+                  ))}
                 </Carousel>
                 <div class="swiper-wrapper"></div>
               </div>
