@@ -31,31 +31,30 @@ const Header = () => {
             direction="left"
             className="navsidebar"
           >
-            <div>Hello World</div>
-          </Drawer>
-          <ul>
-            <span class="closeNav">
+            <span class="closeNav" onClick={() => setIsOpen(false)}>
               <i class="fa-solid fa-xmark"></i>
             </span>
-            <li>
-              <a href="news.php">News</a>
-            </li>
-            <li>
-              <a href="entertainment.php">Entertainment</a>
-            </li>
-            <li>
-              <a href="archive.php">Archive</a>
-            </li>
-            <li>
-              <a href="awards.php">Awards</a>
-            </li>
-            <li>
-              <a href="press.php">Press</a>
-            </li>
-            <li>
-              <a href="#">Outreach</a>
-            </li>
-          </ul>
+            <ul>
+              <li>
+                <a href="news.php">News</a>
+              </li>
+              <li>
+                <a href="entertainment.php">Entertainment</a>
+              </li>
+              <li>
+                <a href="archive.php">Archive</a>
+              </li>
+              <li>
+                <a href="awards.php">Awards</a>
+              </li>
+              <li>
+                <a href="press.php">Press</a>
+              </li>
+              <li>
+                <a href="#">Outreach</a>
+              </li>
+            </ul>
+          </Drawer>
         </nav>
         <div class="followus">
           <ul>

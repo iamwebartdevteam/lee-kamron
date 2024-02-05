@@ -157,7 +157,7 @@ nav ul {
   position: fixed;
   background: var(--bs-white);
   padding: 3% 6%;
-  left: -50%;
+  left: 10%;
   width: 50%;
   top: 0;
   height: 100%;
@@ -970,5 +970,5 @@ footer small a:hover {
   border-color: var(--secondary-color);
 }
 .navsidebar {
-  width: 50%;
+  width: 50% !important;
 }
