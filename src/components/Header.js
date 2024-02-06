@@ -4,6 +4,7 @@ import Drawer from "react-modern-drawer";
 
 //import styles 👇
 import "react-modern-drawer/dist/index.css";
+import { Link } from "react-router-dom";
 
 const Header = () => {
   const [isOpen, setIsOpen] = React.useState(false);
@@ -39,7 +40,7 @@ const Header = () => {
                 <a href="news.php">News</a>
               </li>
               <li>
-                <a href="entertainment.php">Entertainment</a>
+                <Link to="/entertainment">Entertainment</Link>
               </li>
               <li>
                 <a href="archive.php">Archive</a>

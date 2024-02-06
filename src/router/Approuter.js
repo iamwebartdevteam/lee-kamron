@@ -4,6 +4,8 @@ import Home from "../page/Home";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
 import * as API from "../api/Index";
+import Entertaint from "../page/entertament/Entertaint";
+import EntertantDetails from "../page/entertament/EntertantDetails";
 const Approuter = () => {
   const [newsData, setNewsData] = useState([]);
   const [entertanData, setEntertanDat] = useState([]);
@@ -26,6 +28,14 @@ const Approuter = () => {
         <Header />
         <Routes>
           <Route path="/" element={<Home entertanData={entertanData} />} />
+          <Route
+            path="/entertainment"
+            element={<Entertaint entertanData={entertanData} />}
+          />
+          <Route
+            path="/entertainment-details/:slug"
+            element={<EntertantDetails entertanData={entertanData} />}
+          />
         </Routes>
         <Footer />
       </Router>
