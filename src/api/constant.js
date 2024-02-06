@@ -9,3 +9,6 @@ export const URL = "https://lee-kameron.webartechnology.com/api";
 
 export const NEWS = `${URL}/news`;
 export const ENTERTAINMENT = `${URL}/entertainment`;
+
+export const ARCHIVE = `${URL}/archive`;
+//export const ENTERTAINMENT = `${URL}/entertainment`;

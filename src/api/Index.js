@@ -12,6 +12,17 @@ export const newsall = async (data) => {
   }
 };
 
+// ? REGISTRATION API
+export const newsDetails = async (data) => {
+  try {
+    const url = c.NEWS + "/" + data;
+    const res = await axios.get(url, data);
+    return res;
+  } catch (e) {
+    return e.response;
+  }
+};
+
 export const entertainmentAll = async (data) => {
   try {
     const url = c.ENTERTAINMENT;
@@ -25,6 +36,27 @@ export const entertainmentAll = async (data) => {
 export const entertainmentdetails = async (data) => {
   try {
     const url = c.ENTERTAINMENT + "/" + data;
+    const res = await axios.get(url, data);
+    return res;
+  } catch (e) {
+    return e.response;
+  }
+};
+
+export const archiveAll = async (data) => {
+  try {
+    const url = c.ARCHIVE;
+    console.log("url", url);
+    const res = await axios.get(url, data);
+    return res;
+  } catch (e) {
+    return e.response;
+  }
+};
+
+export const archivedetails = async (data) => {
+  try {
+    const url = c.ARCHIVE + "/" + data;
     const res = await axios.get(url, data);
     return res;
   } catch (e) {

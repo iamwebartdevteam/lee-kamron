@@ -19,9 +19,8 @@ const Header = () => {
 
       <header>
         <span class="logo">
-          <a href="index.php">Lee Kameron</a>
+          <Link to="/">Lee Kameron</Link>
         </span>
-
         <nav>
           <span class="logo_icon" onClick={toggleDrawer}>
             <i class="fa-solid fa-ellipsis-vertical"></i>&nbsp; Menu
@@ -37,22 +36,34 @@ const Header = () => {
             </span>
             <ul>
               <li>
-                <a href="news.php">News</a>
+                <Link onClick={() => setIsOpen(false)} to="/news">
+                  News
+                </Link>
               </li>
               <li>
-                <Link to="/entertainment">Entertainment</Link>
+                <Link onClick={() => setIsOpen(false)} to="/entertainment">
+                  Entertainment
+                </Link>
               </li>
               <li>
-                <a href="archive.php">Archive</a>
+                <Link onClick={() => setIsOpen(false)} to="/archive">
+                  Archive
+                </Link>
               </li>
               <li>
-                <a href="awards.php">Awards</a>
+                <Link onClick={() => setIsOpen(false)} to="/awards">
+                  Awards
+                </Link>
               </li>
               <li>
-                <a href="press.php">Press</a>
+                <Link onClick={() => setIsOpen(false)} to="/press">
+                  Press
+                </Link>
               </li>
               <li>
-                <a href="#">Outreach</a>
+                <Link onClick={() => setIsOpen(false)} href="#">
+                  Outreach
+                </Link>
               </li>
             </ul>
           </Drawer>
