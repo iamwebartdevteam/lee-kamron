@@ -21,3 +21,13 @@ export const entertainmentAll = async (data) => {
     return e.response;
   }
 };
+
+export const entertainmentdetails = async (data) => {
+  try {
+    const url = c.ENTERTAINMENT + "/" + data;
+    const res = await axios.get(url, data);
+    return res;
+  } catch (e) {
+    return e.response;
+  }
+};
