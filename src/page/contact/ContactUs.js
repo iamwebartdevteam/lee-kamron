@@ -1,6 +1,8 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
-const ContactUs = () => {
+const ContactUs = ({ contactData }) => {
+  console.log("contactData", contactData);
   return (
     <>
       <section class="newsDetails p-v-50">
@@ -15,7 +17,7 @@ const ContactUs = () => {
                 <span>
                   <i class="fa-solid fa-location-dot"></i>
                 </span>
-                <p>Road-03, House-123/124, New York.</p>
+                <p>{contactData.office_address}</p>
               </div>
               <div class="infoBox mt-4">
                 <label for="">Phone</label>
@@ -23,7 +25,9 @@ const ContactUs = () => {
                   <i class="fa-solid fa-phone-volume"></i>
                 </span>
                 <p>
-                  <a href="tel:000-123-456-7890">000-123-456-7890</a>
+                  <Link to={`tel:${contactData.phone}`}>
+                    {contactData.phone}
+                  </Link>
                 </p>
               </div>
               <div class="infoBox mt-4">
@@ -32,7 +36,9 @@ const ContactUs = () => {
                   <i class="fa-solid fa-envelope"></i>
                 </span>
                 <p>
-                  <a href="mailto:info@gmail.com">info@gmail.com</a>
+                  <Link to={`mailto:${contactData.email}`}>
+                    {contactData.email}
+                  </Link>
                 </p>
               </div>
             </div>
