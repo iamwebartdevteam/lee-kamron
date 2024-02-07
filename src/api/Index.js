@@ -72,3 +72,23 @@ export const awardsAll = async (data) => {
     return e.response;
   }
 };
+
+export const pressAll = async (data) => {
+  try {
+    const url = c.URL + "/press";
+    const res = await axios.get(url, data);
+    return res;
+  } catch (e) {
+    return e.response;
+  }
+};
+
+export const contactInfo = async (data) => {
+  try {
+    const url = c.URL + "/outreach";
+    const res = await axios.get(url, data);
+    return res;
+  } catch (e) {
+    return e.response;
+  }
+};

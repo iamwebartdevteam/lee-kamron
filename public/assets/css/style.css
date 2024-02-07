@@ -981,3 +981,44 @@ footer small a:hover {
 .navsidebar {
   width: 50% !important;
 }
+.infoBox {
+  position: relative;
+  border: rgba(255, 255, 255, 0.3) 1px solid;
+  padding: 30px;
+  display: flex;
+  align-items: center;
+}
+.infoBox label {
+  position: absolute;
+  top: -15px;
+  left: 10px;
+  background: var(--primary-color);
+  padding: 0 15px;
+  font-family: "Orbitron";
+  font-weight: bold;
+  font-size: 18px;
+}
+.infoBox span {
+  display: inline-block;
+  width: 50px;
+  height: 50px;
+  line-height: 50px;
+  border: var(--bs-white) 1px solid;
+  text-align: center;
+  margin-right: 20px;
+}
+.infoBox p {
+  margin: 0;
+}
+.infoBox a {
+  color: var(--bs-white);
+}
+.form-control {
+  height: 50px;
+  border-radius: 0;
+  background: transparent !important;
+  color: var(--bs-white) !important;
+}
+textarea.form-control {
+  height: 100px;
+}

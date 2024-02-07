@@ -10,12 +10,16 @@ import News from "../page/News/News";
 import NewDetails from "../page/News/NewDetails";
 import ArchiveList from "../page/archive/ArchiveList";
 import Awards from "../page/award/Awards";
+import Press from "../page/press/Press";
+import ContactUs from "../page/contact/ContactUs";
 
 const Approuter = () => {
   const [newsData, setNewsData] = useState([]);
   const [entertanData, setEntertanDat] = useState([]);
   const [archiveData, setArchiveData] = useState([]);
   const [awardData, setAwardData] = useState([]);
+  const [pressData, setPressData] = useState([]);
+  const [contactData, setContactData] = useState([]);
   const allpagedata = async () => {
     try {
       const newsres = await API.newsall();
@@ -25,8 +29,11 @@ const Approuter = () => {
       const archiveres = await API.archiveAll();
       setArchiveData(archiveres.data.data);
       const awardres = await API.awardsAll();
-      console.log("awardres", awardres);
       setAwardData(awardres.data.data);
+      const pressres = await API.pressAll();
+      setPressData(pressres.data.data);
+      const contactres = await API.contactInfo();
+      setContactData(contactres.data.data);
     } catch (error) {}
   };
   useEffect(() => {
@@ -58,6 +65,11 @@ const Approuter = () => {
             element={<ArchiveList archiveData={archiveData} />}
           />
           <Route path="/awards" element={<Awards awardData={awardData} />} />
+          <Route path="/press" element={<Press pressData={pressData} />} />
+          <Route
+            path="/contact-us"
+            element={<ContactUs contactData={contactData} />}
+          />
         </Routes>
 
         <Footer />

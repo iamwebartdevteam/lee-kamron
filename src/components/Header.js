@@ -61,7 +61,7 @@ const Header = () => {
                 </Link>
               </li>
               <li>
-                <Link onClick={() => setIsOpen(false)} href="#">
+                <Link onClick={() => setIsOpen(false)} to="/contact-us">
                   Outreach
                 </Link>
               </li>
