@@ -46,7 +46,6 @@ export const entertainmentdetails = async (data) => {
 export const archiveAll = async (data) => {
   try {
     const url = c.ARCHIVE;
-    console.log("url", url);
     const res = await axios.get(url, data);
     return res;
   } catch (e) {
@@ -57,6 +56,16 @@ export const archiveAll = async (data) => {
 export const archivedetails = async (data) => {
   try {
     const url = c.ARCHIVE + "/" + data;
+    const res = await axios.get(url, data);
+    return res;
+  } catch (e) {
+    return e.response;
+  }
+};
+
+export const awardsAll = async (data) => {
+  try {
+    const url = c.AWARDS;
     const res = await axios.get(url, data);
     return res;
   } catch (e) {

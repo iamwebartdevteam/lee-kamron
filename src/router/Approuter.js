@@ -9,11 +9,13 @@ import EntertantDetails from "../page/entertament/EntertantDetails";
 import News from "../page/News/News";
 import NewDetails from "../page/News/NewDetails";
 import ArchiveList from "../page/archive/ArchiveList";
+import Awards from "../page/award/Awards";
 
 const Approuter = () => {
   const [newsData, setNewsData] = useState([]);
   const [entertanData, setEntertanDat] = useState([]);
   const [archiveData, setArchiveData] = useState([]);
+  const [awardData, setAwardData] = useState([]);
   const allpagedata = async () => {
     try {
       const newsres = await API.newsall();
@@ -22,6 +24,9 @@ const Approuter = () => {
       setEntertanDat(entertantres.data.data);
       const archiveres = await API.archiveAll();
       setArchiveData(archiveres.data.data);
+      const awardres = await API.awardsAll();
+      console.log("awardres", awardres);
+      setAwardData(awardres.data.data);
     } catch (error) {}
   };
   useEffect(() => {
@@ -52,6 +57,7 @@ const Approuter = () => {
             path="/archive"
             element={<ArchiveList archiveData={archiveData} />}
           />
+          <Route path="/awards" element={<Awards awardData={awardData} />} />
         </Routes>
 
         <Footer />
