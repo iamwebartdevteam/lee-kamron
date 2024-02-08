@@ -92,3 +92,13 @@ export const contactInfo = async (data) => {
     return e.response;
   }
 };
+
+export const enqueryData = async (data) => {
+  try {
+    const url = c.URL + "/email-send";
+    const res = await axios.post(url, data);
+    return res;
+  } catch (e) {
+    return e.response;
+  }
+};

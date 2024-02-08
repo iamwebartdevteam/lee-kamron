@@ -1,8 +1,34 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
+import * as API from "../../api/Index";
+const initialValues = {
+  fname: "",
+  email: "",
+  phone: "",
+  message: "",
+};
 
 const ContactUs = ({ contactData }) => {
-  console.log("contactData", contactData);
+  const [formData, setFormData] = useState(initialValues);
+  const handalerChanges = async (e) => {
+    const { name, value } = e.target;
+    setFormData({ ...formData, [name]: value });
+  };
+
+  const submitButton = async () => {
+    try {
+      const reqObj = {
+        fname: formData.fname,
+        phone: formData.phone,
+        email: formData.email,
+        message: formData.message,
+      };
+      console.log("reqObj", reqObj);
+      const response = await API.enqueryData(reqObj);
+      console.log("response", response);
+    } catch (error) {}
+  };
+
   return (
     <>
       <section class="newsDetails p-v-50">
@@ -52,7 +78,9 @@ const ContactUs = ({ contactData }) => {
                       class="form-control"
                       id="text"
                       placeholder="Full Name"
-                      name="name"
+                      name="fname"
+                      value={formData.fname}
+                      onChange={handalerChanges}
                     />
                   </div>
                 </div>
@@ -63,7 +91,9 @@ const ContactUs = ({ contactData }) => {
                       class="form-control"
                       id="text"
                       placeholder="Phone No"
-                      name=""
+                      name="phone"
+                      value={formData.phone}
+                      onChange={handalerChanges}
                     />
                   </div>
                 </div>
@@ -74,7 +104,9 @@ const ContactUs = ({ contactData }) => {
                       class="form-control"
                       id="text"
                       placeholder="Email"
-                      name=""
+                      name="email"
+                      value={formData.email}
+                      onChange={handalerChanges}
                     />
                   </div>
                 </div>
@@ -82,7 +114,9 @@ const ContactUs = ({ contactData }) => {
                 <div class="col-12">
                   <div class="mb-3 mt-3">
                     <textarea
-                      name=""
+                      name="message"
+                      value={formData.message}
+                      onChange={handalerChanges}
                       class="form-control"
                       id=""
                       cols=""
@@ -92,7 +126,9 @@ const ContactUs = ({ contactData }) => {
                   </div>
                 </div>
                 <div class="col-12 text-end">
-                  <button class="btn hvr-ripple-out">Submit</button>
+                  <button onClick={submitButton} class="btn hvr-ripple-out">
+                    Submit
+                  </button>
                 </div>
               </div>
             </div>
